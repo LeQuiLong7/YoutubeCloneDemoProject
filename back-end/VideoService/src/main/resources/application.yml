@@ -1,0 +1,23 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: video-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/youtube-clone-db
+
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: video-service-group
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost

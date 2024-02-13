@@ -1,0 +1,63 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:5173"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+      routes:
+        - id: user-service-route
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**
+          filters:
+            - RewritePath=/(?<remaining>.*), /api/v1/$\{remaining}
+            - SetResponseHeader=Access-Control-Allow-Origin, http://localhost:5173
+            - SetResponseHeader=Access-Control-Allow-Methods,*
+        - id: video-service-route
+          uri: lb://video-service
+          predicates:
+            - Path=/videos/**
+          filters:
+            - RewritePath=/(?<remaining>.*), /api/v1/$\{remaining}
+            - SetResponseHeader=Access-Control-Allow-Origin, http://localhost:5173
+            - SetResponseHeader=Access-Control-Allow-Methods,*
+#        - id: movie-route
+#          uri: lb://movie-service
+#          predicates:
+#            - Path=/movies/**
+#          filters:
+#            - RewritePath=/(?<remaining>.*), /api/v1/$\{remaining}
+#            - SetResponseHeader=Access-Control-Allow-Origin,*
+#            - SetResponseHeader=Access-Control-Allow-Methods,*
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 612276919004-e1seo3hfco9o2j7ir62cbjhrok2e8scd.apps.googleusercontent.com
+            client-secret: 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
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+
+logging:
+  level:
+    #    root: INFO
+    org.springframework.cloud.gateway: TRACE
+    #    org.springframework.cloud.gateway.RouteDefinitionLocator: INFO
+    org.springframework.security: TRACE

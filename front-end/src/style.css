@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  /* background: linear-gradient(120deg,#2980b9, #8e44ad); */
+  /* height: 100vh; */
+  /* overflow: hidden; */
+}
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+.center h1{
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+.center form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .txt_field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.txt_field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.txt_field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.txt_field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2691d9;
+  transition: .5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+  top: -5px;
+  color: #2691d9;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+  width: 100%;
+}
+.pass{
+  margin: -5px 0 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+.pass:hover{
+  text-decoration: underline;
+}
+input[type="submit"]{
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+.login-btn{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    padding-left: 20px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
+
+}
+.login-btn:hover{
+    border-color: #2691d9;
+    transition: .5s;
+}
+input[type="submit"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+.signup_link{
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+.signup_link a{
+  color: #2691d9;
+  text-decoration: none;
+}
+.signup_link a:hover{
+  text-decoration: underline;
+}
+.thumnail{
+  width: 300px;
+  border: 1px solid black;
+  height: 200px;
+}
+.video {
+  width: 300px;
+  /* border: 1px solid black; */
+  height: 300px;
+}
+.thumnail:hover {
+  
+  cursor: pointer;
+}
+.des {
+  background-color: gray;
+  color: black;
+}
+.content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+#video-container {
+  position: relative;
+  width: 800px; /* Set the desired width */
+  /* height: 400px; */
+}
+
+#video-container video {
+  width: 100%;
+  height: 100%;
+}
+
+.upload-container{
+    width: 50vh;
+    margin: auto;
+    background-color: whitesmoke;
+}
+/* #video-container img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+} */
+.create-form{
+  width: 700px;
+  /* height: 500px; */
+  background-color: whitesmoke;
+  font-size: 25px;
+  border: 2px solid black;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  text-align: center;
+  min-height: 300px;
+
+}
+input{
+  font-size: 20px;
+}
+.create-form div{
+  margin-top: 30px;
+  
+}
+
+.create-bt{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 100px;
+  height: 30px;
+}
+.cancel{
+  position: absolute;
+  top: 0;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  background-color: red;
+  right: 0;
+  width: 100px;
+  height: 30px;
+}
+.mv-img-display img{
+  width: 600px;
+  /* overflow: hidden; */
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+.search{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.empty{
+  margin-left: 300px;
+  font-weight: bold;
+}
+.search input {
+  width: 500px;
+}
+
+.avt {
+  border-radius: 50%;
+  width: 50px;
+}
+
+.home-btn{
+  padding: 10px;
+  border-radius: 10%;
+}
+
+.nav{
+  /* background: cyan; */
+  width: 200px;
+  height: 150vh;
+  position: absolute;
+}
+.nav p {
+  padding: 10px;
+}
+.nav p:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+.inline{
+  /* display: inline; */
+  /* width: 150px; */
+  /* height: 100px; */
+  /* background-color: aqua; */
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.channel-info{
+  display: flex;
+}
+.bold {
+  font-weight: bold;
+}
+.channel{
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin: 20px;
+}
+.video-container {
+  width: 800px;
+}
+
+.content .videos {
+  margin-left: 250px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  gap: 50px;
+  /* grid: 10px; */
+}
+
+.video{
+
+  cursor: pointer;
+  /* overflow: hidden; */
+}
+
+.video h2 {
+    width: 300px;
+    height: 40px;
+    font-weight: 500;
+    overflow: hidden;
+}
+.video h4 {
+  font-weight: 300;
+}
+
+
+.video-container {
+  margin-left: 230px;
+}
+.video-container h4{
+  font-weight: 300;
+}
+.actions button {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.watch{
+  display: flex;
+  justify-content: space-between;
+}
+
+.aside-container {
+  width: 450px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.aside {
+  border: 1px solid black;
+  width: 450px;
+  height: 130px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.aside .text {
+  width: 280px;
+  height: 130px;
+}
+.text h2{
+  height: 75px;
+  font-weight: 600;
+}
+.text h3 {
+  font-weight: 400;
+}
+h4 {
+  font-weight: 300;
+}
+
+
+.aside img {
+  width: 150px;
+  height: 130px;
+  border-radius: 10px;
+}
+
+.thumnail-detail{
+  width: 300px;
+  height: 200px;
+}
+.your-channel-nav span {
+  display: block;
+  font-weight: bold;
+}
+.nav-video{
+  margin-left: 130px;
+}
+.nav-title {
+  margin-left: 100px;
+}
+.nav-views {
+  margin-left: 150px;
+}
+.your-channel-nav{
+  margin-left: 280px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.detail{
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  margin-top: 10px;
+  margin-left: 280px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.delete {
+  background-color: red;
+  padding: 10px;
+  color: white;
+}
+
+.you-sure {
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  border: 2px solid black;
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  z-index: 1;
+  border-radius: 20px;
+}
+.you-sure h3{
+  border: none;
+  text-align: center;
+  font-size: 50px;
+}
+.you-sure button{
+  border: 2px solid black;
+  margin: 10px;
+  margin-top: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  /* background-color: antiquewhite; */
+  text-align: center;
+  font-size: 20px;
+}
+.you-sure div{
+  display: flex;
+  justify-content: space-around;
+}
+button{
+  cursor: pointer;
+}
+
+
+.upload {
+  background-color: #2691d9;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+}
+.channel button {
+  border-radius: 10px;
+  padding: 10px
+}
+.unsubscribed{
+  background-color: black;
+  color: white;
+  font-weight: 600;
+}
+.subscribed{
+  font-weight: 600;
+
+  background-color: grey;
+  color: white;
+}
+
+.home-btn{
+  background-color: red;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.search-info-menu{
+  width: 300px;
+  height: 150px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+  position: fixed;
+  right: 70px;
+  top: 50px;
+  z-index: 1;
+}
+
+.menu{
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.first {
+  margin-top: 10px;
+}
+
+.email{
+  margin-left: 70px;
+}
+.left {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: large;
+  text-align: center;
+}
+
+.avt{
+  cursor: pointer;
+}
+.avt:hover {
+  border: 2px solid gray;
+}
+
+.subscribed-channel img{
+  width: 40px;
+  height: 40px;
+  float: left;
+  border-radius: 50%;
+}
+.subscribed-channel:hover {
+  background-color: gray;
+  border-radius: 10px;
+}
+.subscribed-channel{
+  padding: 10px;
+}
+.subscribed-channel p {
+  /* width: 100%; */
+  text-wrap: nowrap;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.search-bar{
+  border-radius: 10px;
+}
