@@ -8,7 +8,7 @@ spring:
       uri: mongodb://localhost:27017/youtube-clone-db
 
   kafka:
-    bootstrap-servers: localhost:29092
+    bootstrap-servers: localhost:9092
     consumer:
       group-id: video-service-group
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
